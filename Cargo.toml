@@ -1,0 +1,28 @@
+[package]
+name = "iphone-photo-sync"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+dirs = "7.0.0"
+eframe = "0.37"
+hex = "0.4.3"
+log = "0.4.34"
+reqwest = { version = "0.13.5", default-features = false, features = ["blocking", "json", "native-tls"] }
+rfd = "0.17.2"
+self-replace = "1.5.0"
+semver = "1.0.28"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sha2 = "0.11.1"
+tray-icon = "0.26.1"
+windows = { version = "0.62.2", features = ["Win32_Foundation", "Win32_System_Com", "Win32_System_Com_StructuredStorage", "Win32_Devices_PortableDevices", "Win32_System_Variant", "Win32_System_Threading", "Win32_UI_WindowsAndMessaging", "Win32_Security", "Win32_Storage_FileSystem", "Win32_System_SystemInformation", "Win32_UI_Shell", "Win32_UI_Shell_Common", "Win32_Storage_EnhancedStorage", "Win32_System_SystemServices", "Win32_UI_Shell_PropertiesSystem"] }
+winreg = "0.56.0"
+
+[dev-dependencies]
+tempfile = "3.27.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
